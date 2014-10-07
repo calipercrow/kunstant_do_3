@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :discussions
+
   # Set root
   root 'projects#index'
 
