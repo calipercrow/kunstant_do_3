@@ -1,3 +1,6 @@
 class Discussion < ActiveRecord::Base
-  belongs_to :post
+
+	# 2nd Association
+	belongs_to :post
+
 end

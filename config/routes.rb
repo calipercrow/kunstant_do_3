@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
   
-  resources :discussions
-
   # Set root
   root 'projects#index'
 
   # Creates paths for posts
   resources :posts
 
+  # Creates paths for discussions?
+  resources :discussions
+
   # Creates paths for projects and nests posts inside
+  # Nests discussions inside posts
   resources :projects do
-    resources :posts
+    resources :posts do
+      resources :discussions
+    end
   end
 
 
