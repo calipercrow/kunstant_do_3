@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>DEFAULT?</strong>
+  <%= @project.p_default %>
+</p>
+
+<p>
+  <strong>TITLE</strong>
+  <%= @project.p_title %>
+</p>
+
+<p>
+  <strong>DESCRIPTION</strong>
+  <%= @project.p_description %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+
+
+
+
+<hr />
+
+<br>
+
+<!-- <h3>New Posts</h3> -->
+<%= render 'posts/form' %>
+
+
+<!-- Show Posts generated here -->
+<h3> Posts </h3>
+
+<hr />
+
+<% @project.posts.each do |u| %>
+
+		<p>
+			<%= link_to u.post_description, project_post_path(@project, u) %>
+		  <br>
+			<%= time_ago_in_words u.created_at %> ago
+		</p>
+
+    <hr />
+
+<% end %>

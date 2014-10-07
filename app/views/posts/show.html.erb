@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Post description:</strong>
+  <%= @post.post_description %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_post_path(@post.project, @post) %> |
+<% if @post.project.nil? %>
+<%= link_to 'Back', posts_path %>
+<% else %>
+<%= link_to 'Back', @post.project %>
+<% end %>
