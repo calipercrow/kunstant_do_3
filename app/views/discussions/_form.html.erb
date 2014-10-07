@@ -15,15 +15,14 @@
     <%= f.label :comment %><br>
     <%= f.text_area :comment %>
   </div>
-  <div class="field">
+<!--   <div class="field">
     <%= f.label :drawover %><br>
     <%= f.text_area :drawover %>
-  </div>
-  <div class="field">
-    <%= f.label :post_id %><br>
-    <%= f.text_field :post_id %>
-  </div>
+  </div> -->
+
+  <div><%= f.hidden_field :post_id, value: @post.id %></div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit @discussion.new_record? ? "Comment!" : "Change my Post" %>
   </div>
 <% end %>
