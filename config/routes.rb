@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'projects#index'
 
   # Creates paths for posts
-  resources :posts
+  resources :posts 
 
   # Creates paths for discussions?
   resources :discussions

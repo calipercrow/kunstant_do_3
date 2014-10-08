@@ -27,10 +27,11 @@
 
 <% @post.discussions.each do |u| %>
 
-		<p>
+		<div>
 			<%= u.comment %>
-			<%= time_ago_in_words u.created_at %> ago
-		</p>
+			<br>
+			<i><%= time_ago_in_words u.created_at %> ago</i>
+		</div>
 
     <hr />
 
