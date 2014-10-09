@@ -58,9 +58,12 @@ class DiscussionsController < ApplicationController
   # DELETE /discussions/1
   # DELETE /discussions/1.json
   def destroy
+    @post = @discussion.post
+    @project = @post.project
+
     @discussion.destroy
     respond_to do |format|
-      format.html { redirect_to discussions_url, notice: 'Discussion was successfully destroyed.' }
+      format.html { redirect_to [@project, @post], notice: 'Discussion was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
